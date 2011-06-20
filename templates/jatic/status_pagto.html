@@ -1,0 +1,12 @@
+{% extends "jatic/index.html" %}
+{% block titulo %}
+<h1>Inscri&ccedil;&atilde;o para o JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+<h2>Status do seu pagamento: {{ status }}</h2>
+<p>Uma mensagem com os detalhes desta transa&ccedil;&atilde;o foi enviada para o seu e-mail.</p>
+<br/>
+<p><a href="{% url lti.jatic.views.index %}">Voltar para a p&aacute;gina inicial</a></p>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

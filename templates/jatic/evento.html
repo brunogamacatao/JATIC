@@ -1,0 +1,17 @@
+{% extends "jatic/index.html" %}
+{% block head %}
+{% endblock %}
+{% block jquery %}
+{% endblock %}
+{% block titulo %}
+<br/><br/><h2>{{ evento.nome }}</h2>
+{% endblock %}
+{% block conteudo %}
+<ol type="1">
+{% for alocacao in evento.alocacao_set.all %}
+<li style="list-style-type: decimal">{{alocacao.inscricao.nome}}</li>
+{% endfor %}
+</ol>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

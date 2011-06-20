@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <base href="http://lti.cesed.br/" />
+	<title>{% block title %}JATIC{% endblock %}</title>
+	<link rel="stylesheet" href="apps{{ MEDIA_URL }}jatic/css/style.css" type="text/css" />
+	<link type="text/css" href="apps{{ MEDIA_URL }}jatic/css/sunny/jquery-ui.css" rel="stylesheet" />	
+	<script type="text/javascript" src="apps{{ MEDIA_URL }}jatic/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="apps{{ MEDIA_URL }}jatic/js/jquery-ui-1.8.4.custom.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.botao').button();
+			{% block jquery %}
+			{% endblock %}
+		});
+	</script>
+	{% block head %}{% endblock %}
+</head>
+<body>
+<!-- BEGIN WRAP -->
+<div id="wrap">
+    <!-- BEGIN TOP -->
+    <div id="top">
+            <div id="nav">
+                <ul>
+                    <li><a href="{% url lti.jatic.views.index %}">In&iacute;cio</a></li>
+                    <!--li><a href="{% url lti.jatic.views.inscricao %}">Inscri&ccedil;&atilde;o</a></li-->
+                    <li><a href="{% url lti.jatic.views.programacao %}">Programa&ccedil;&atilde;o</a></li>
+                    <li><a href="{% url lti.jatic.views.palestrantes %}">Palestrantes</a></li>
+                    <li><a href="{% url lti.jatic.views.localizacao %}">Localiza&ccedil;&atilde;o</a></li>
+                    <li><a href="{% url lti.jatic.views.contato %}">Contato</a></li>
+                </ul>
+             </div>
+    </div>
+    <!-- END TOP -->
+    <!-- BEGIN BANNER -->
+    <div id="banner">
+    <div id="quote">
+		<img src="apps{{ MEDIA_URL }}jatic/images/jatic_logo.png"/>
+        <span>Jornada de Atualiza&ccedil;&atilde;o em Tecnologia da Informa&ccedil;&atilde;o e Comunica&ccedil;&atilde;o</span>
+    </div>
+    
+    <div id="headline">
+    	{% block titulo %}
+			<h1>JATIC 2010<span><!--a class="botao" style="font-size: 20px" href="{% url lti.jatic.views.inscricao %}">Inscreva-se &nbsp;&nbsp;</a--></span></h1>
+		{% endblock %}
+    </div>
+    
+    </div>
+    <!-- END BANNER -->
+    
+    <!-- BEGIN CONTENT -->
+    <div id="content">
+        <div id="left_col">
+			{% block conteudo %}
+        	<h2>Apresentação</h2>
+
+                        <p style="text-align: justify;">
+			   Esta é a segunda edição da jornada de atualização em tecnologia da informação e comunicação da FACISA (JATIC),
+	                   tendo como meta a divulgação e o compartilhamento de conhecimento entre os profissionais e estudantes do segmento 
+			   de Tecnologia da Informação e Comunicação (TIC).</p>
+			<p style="text-align: justify;">
+			   Esta edi&ccedil;&atilde;o do JATIC contar&aacute; com palestras e mini-cursos dos mais variados temas, todos 
+			   apresentados por profissionais do mercado de tecnologia da informa&ccedil;&atilde;o e por acad&ercir;micos de
+			   diversas instiui&ccedil;&otilde;es de ensino superior (mestres e doutores).</p>
+			<p style="text-align: justify;">
+			   O objetivo do JATIC deste ano ser&aacute; o compartilhamento de conhecimento no maior n&uacute;mero de tecnologias
+			   utilizadas atualmente na &aacute;rea de tecnologia da informa&ccedil;&atilde;o e comunica&ccedil;&atilde;o. 
+			   Ser&atilde;o abordados temas que v&atilde;o desde programação nas n&uacute;vens, linguagens de programa&ccedil;&atilde;o 
+			   din&acirc;micas, frameworks para desenvolvimento web de alta produtividade, at&eacute; o uso de tecnologias para o 
+			   desenvolvimento de jogos para computadores, consoles e celulares.</p>
+
+    		<div class="clearer"></div>
+			<p>Inscreva-se já !</p>
+			{% endblock %}
+        </div>
+        <div id="right_col">
+			{% block agenda %}
+            <div id="news">
+            	<h2>Agenda</h2>
+                <ul>                    
+               	  <li><a href="#"><span class="date"><span class="month">OUT</span><span class="day">28</span><span class="title">Abertura do evento no campus da FACISA</span><span class="author">Posted by: Bruno Catão</span></span></a></li>
+               	  <li><a href="#"><span class="date"><span class="month">OUT</span><span class="day">29</span><span class="title">Palestra no auditório da FIEP</span><span class="author">Posted by: Bruno Catão</span></span></a></li>
+               	  <li><a href="#"><span class="date"><span class="month">OUT</span><span class="day">30</span><span class="title">Encerramento no campus da FACISA</span><span class="author">Posted by: Bruno Catão</span></span></a></li>
+              </ul>
+            </div>
+			{% endblock %}
+        </div>
+        <div class="clearer"></div>
+    </div>
+    <!-- END CONTENT -->
+    <!-- BEGIN FOOTER -->
+    <div id="footer">
+    	<ul>
+            <li><a href="{% url lti.jatic.views.index %}">In&iacute;cio</a></li>
+            <!--li><a href="{% url lti.jatic.views.inscricao %}">Inscri&ccedil;&atilde;o</a></li-->
+            <li><a href="{% url lti.jatic.views.programacao %}">Programa&ccedil;&atilde;o</a></li>
+            <li><a href="{% url lti.jatic.views.palestrantes %}">Palestrantes</a></li>
+            <li><a href="{% url lti.jatic.views.localizacao %}">Localiza&ccedil;&atilde;o</a></li>
+            <li><a href="{% url lti.jatic.views.contato %}">Contato</a></li>
+    	</ul>
+        <div class="clearer"></div>
+         <p>&copy; 2010 LTI - CESED - Facisa. Todos os direitos reservados.</p>
+    </div>
+    <!-- END FOOTER -->
+</div>
+<!-- END WRAP -->
+</body>
+</html>

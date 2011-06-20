@@ -1,0 +1,12 @@
+{% extends "jatic/index.html" %}
+{% block jquery %}
+	$(".botao").button();
+{% endblock %}
+{% block titulo %}
+<h1>Obrigado Pelo Contato !</h1>
+{% endblock %}
+{% block conteudo %}
+	<p><a class="botao" href="{% url lti.jatic.views.index %}">Clique aqui para voltar a página inicial</a></p>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

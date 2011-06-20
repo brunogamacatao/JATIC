@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<h1>JATIC</h1>
+		<p><b>Alguém preencheu o formulário de contato do JATIC com os dados abaixo:</b></p>
+		<table border="0">
+			<tr>
+				<td><b>Nome:</b></td>
+				<td>{{ contato.nome }}</td>
+			</tr>
+			<tr>
+				<td><b>Email:</b></td>
+				<td>{{ contato.email }}</td>
+			</tr>
+			<tr>
+				<td><b>Telefone:</b></td>
+				<td>{{ contato.telefone }}</td>
+			</tr>
+		</table>
+		<p><b>Mensagem:</b></p>
+		<p>{{ contato.mensagem|safe|escape }}</p>
+	</body>
+</html>

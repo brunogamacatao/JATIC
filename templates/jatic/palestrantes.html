@@ -1,0 +1,22 @@
+{% extends "jatic/index.html" %}
+{% block titulo %}
+<h1>Palestrantes do JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+	<div id="guests">
+		<ul>
+	{% for p in palestrantes %}
+			<li>
+				<img width="88" height="88" src="apps{{ p.foto.url }}-t88x88.png"/>
+				<h2>{{ p.nome }}</h2>
+				<p>{{ p.biografia|linebreaks }}
+			</li>
+			{% if not forloop.last %}
+			<hr style="width:720px; margin-top: -10px"/>
+			{% endif %}
+	{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

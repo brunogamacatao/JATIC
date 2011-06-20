@@ -1,0 +1,18 @@
+{% extends "jatic/index.html" %}
+{% block head %}
+{% endblock %}
+{% block jquery %}
+{% endblock %}
+{% block titulo %}
+<h1>Eventos do JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+<ul>
+{% for evento in eventos %}
+<li><a href="{% url lti.jatic.views.evento evento.id %}">{{evento.nome}}</a> <i>({{ evento.alocacao_set.all|length }} inscritos)</i></li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% block agenda %}
+{% endblock %}
+

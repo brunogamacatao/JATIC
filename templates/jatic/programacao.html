@@ -1,0 +1,318 @@
+{% extends "jatic/index.html" %}
+{% block jquery %}
+	$('#left_col').css('width', '800px');
+	$(".botao").button();
+{% endblock %}
+{% block head %}
+<style type="text/css">
+th {
+	font-size:100%;
+	color: #FFF;
+	background-color: #039;
+	padding: 10px;
+}
+table {
+	border: 1px solid #999;
+	width: 100%;
+}
+tr td {
+	padding: 2px;
+	font-size: 14px;
+}
+.destaque {
+	background-color: #CFC;
+}
+.cabecalho {
+	font-style: italic;
+	font-weight: bold;
+	background-color: #CFC;
+}
+.cabecalho td {
+	text-align: center;
+}
+.horario {
+	font-style: italic;
+	text-align: center;
+}
+</style>
+
+{% endblock %}
+{% block titulo %}
+<h1>Programa&ccedil;&atilde;o do JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+	<table border="1">
+    	<thead>
+        	<th colspan="4">28/10/2010 Quinta-Feira</th>
+        </thead>
+        <tr class="cabecalho">
+        	<td>Horário</td>
+            <td>Auditório</td>
+        </tr>
+        <tr>
+        	<td class="horario">18:00<br/>18:30</td>
+            <td>Credenciamento</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">18:30<br/>19:00</td>
+            <td>Solenidade de Abertura</td>
+        </tr>
+        <tr>
+        	<td class="horario">19:00<br/>20:00</td>
+            <td>
+            	<b>Palestra:</b> Realizando Pesquisa em Computação
+                <br/>
+                <b>Palestrante:</b> Dr. Jacques Philippe Sauvé
+			</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">20:00<br/>20:30</td>
+            <td>Coffee Break</td>
+        </tr>
+        <tr>
+        	<td class="horario">20:30<br/>22:00</td>
+            <td>
+            	<b>Palestra:</b>Como empreender na nuvem
+                <br/>
+                <b>Palestrante:</b>Rodrigo Vilar
+			</td>
+        </tr>
+    </table>
+	<br/>
+	<table border="1">
+    	<thead>
+	   	  <th colspan="5">29/10/2010 Sexta-Feira</th>
+        </thead>
+        <tr class="cabecalho">
+        	<td>Horário</td>
+            <td>Laboratório A</td>
+            <td>Laboratório B</td>
+            <td>Sala A</td>
+            <td>Sala B</td>
+        </tr>
+        <tr>
+        	<td class="horario">8:00<br/>9:00</td>
+			<td>
+            	<b>Mini-Curso:</b> Desenvolvendo aplicações para o Google AppEngine utilizando Python
+                <br/>
+                <b>Responsável:</b> Danilo Penna Queiroz
+			</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">9:00<br/>9:30</td>
+            <td colspan="5">Coffee Break</td>
+        </tr>
+        <tr>
+        	<td class="horario">9:30<br/>12:00</td>
+            <td>
+            	<b>Mini-Curso:</b> Desenvolvendo aplicações para o Google AppEngine utilizando Python
+                <br/>
+                <b>Responsável:</b> Danilo Penna Queiroz
+			</td>
+            <td>-</td>
+            <td>
+            	<b>Palestra:</b> Segurança da Informação e Suas Ameaças
+                <br/>
+                <b>Palestrante:</b> Cleisson Christian Lima da Costa Ramos
+            </td>
+            <td>-</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">12:00<br/>14:00</td>
+            <td colspan="5">-</td>
+        </tr>
+        <tr>
+        	<td class="horario">14:00<br/>15:00</td>
+            <td>
+            	<b>Mini-Curso:</b> Desvendando o Ruby on Rails
+                <br/>
+                <b>Responsável:</b> Thiago Santos Sampaio
+			</td>
+            <td>
+            	<b>Mini-Curso:</b> Introdução às APIs de Dados da Google
+                <br/>
+                <b>Responsável :</b> Claudivan C. Lopes
+			</td>
+            <td>-</td>
+            <td>
+                <b>Palestra:</b> Linux, o Software Livre e tudo mais
+                <br/>
+                <b>Palestrate:</b> Danilo Penna Queiroz
+            </td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">15:00<br/>15:30</td>
+            <td colspan="5">Coffee Break</td>
+        </tr>
+        <tr>
+        	<td class="horario">15:30<br/>16:30</td>
+            <td>
+            	<b>Mini-Curso:</b> Desvendando o Ruby on Rails
+                <br/>
+                <b>Responsável:</b> Thiago Santos Sampaio
+			</td>
+            <td>
+            	<b>Mini-Curso:</b> Introdução às APIs de Dados da Google
+                <br/>
+                <b>Responsável :</b> Claudivan C. Lopes
+			</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">16:30<br/>18:00</td>
+            <td>
+            	<b>Mini-Curso:</b> Desvendando o Ruby on Rails
+                <br/>
+                <b>Responsável:</b> Thiago Santos Sampaio
+			</td>
+            <td>
+                <b>Mini-Curso:</b> Introdução às APIs de Dados da Google
+                <br/>
+                <b>Responsável :</b> Claudivan C. Lopes
+            </td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        </table>
+	<br/>
+        <table border="1">
+        <thead>
+                  <th colspan="5">29/10/2010 Sexta-Feira Noite</th>
+        </thead>
+        <tr class="cabecalho">
+            <td>Horário</td>
+            <td>Auditório da FIEP</td>
+        </tr>
+        <tr class="destaque">
+            <td class="horario">18:30<br/>20:00</td>
+	    <td>
+                <b>Palestra:</b> Application Lifecycle Management com TFS
+                <br/>
+                <b>Palestrante:</b> Ramon Dur&atilde;es
+            </td>
+        </tr>
+        <tr>
+            <td class="horario">20:00<br/>20:30</td>
+            <td>Coffee Break</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">20:30<br/>22:00</td>
+            <td>
+                <b>Palestra:</b> Criando jogos para o novo Windows Phone
+                <br/>
+                <b>Palestrante:</b> José Antonio Leal de Farias
+            </td>
+        </tr>
+    </table>
+	<br/>
+	<table border="1">
+    	<thead>
+	   	  <th colspan="5">30/10/2010 Sábado</th>
+        </thead>
+        <tr class="cabecalho">
+        	<td>Horário</td>
+            <td>Laboratório A</td>
+            <td>Laboratório B</td>
+            <td>Auditório</td>
+            <td>Sala</td>
+        </tr>
+        <tr>
+        	<td class="horario">8:00<br/>9:00</td>
+            <td>-</td>
+            <td>-</td>
+	    <td>
+            	<b>Workshop:</b> Agilidade com Scrum
+                <br/>
+                <b>Responsável:</b> Maurício Linhares
+			</td>
+	     <td>-</td>
+        </tr>
+        <tr class="destaque">
+        	<td class="horario">9:00<br/>9:30</td>
+            <td colspan="5">Coffee Break</td>
+        </tr>
+        <tr>
+            <td class="horario">9:30<br/>12:00</td>
+            <td>
+                <b>Mini-Curso:</b> Grails: o "Santo Graal" do Desenvolvimento Web
+                <br/>
+                <b>Responsável:</b> Diego Cavalcanti
+            </td>
+            <td>-</td>
+	    <td>
+            	<b>Workshop:</b> Agilidade com Scrum
+                <br/>
+                <b>Responsável:</b> Maurício Linhares
+	    </td>
+	    <td>-</td>
+        </tr>
+        <tr class="destaque">
+            <td class="horario">12:00<br/>14:00</td>
+            <td colspan="5">-</td>
+        </tr>
+        <tr>
+            <td class="horario">14:00<br/>16:00</td>
+            <td>-</td>
+            <td>
+                <b>Mini-Curso:</b> Desenvolvendo aplicações GWT com GWTDesigner + Ext-GWT
+                <br/>
+                <b>Responsável:</b> Abmar Barros
+            </td>
+	    <td>
+            	<b>Palestra:</b>Desenvolvimento para a Web com Python e Django
+                <br/>
+                <b>Responsável:</b>Ígor Sobreira
+	    </td>
+	    <td>-</td>
+        </tr>
+        <tr class="destaque">
+            <td class="horario">16:00<br/>16:15</td>
+            <td colspan="5">Coffee Break</td>
+        </tr>
+        <tr>
+            <td class="horario">16:15<br/>17:00</td>
+            <td>-</td>
+            <td>
+                <b>Mini-Curso:</b> Desenvolvendo aplicações GWT com GWTDesigner + Ext-GWT
+                <br/>
+                <b>Responsável:</b> Abmar Barros
+            </td>
+            <td>
+                <b>Palestra:</b> Ferramentas para Acompanhamento de Projetos Ágeis
+                <br/>
+                <b>Responsável:</b> Taciano Morais Silva
+            </td>
+            <td>
+            	<b>Palestra:</b> Protocol Buffers
+                <br/>
+                <b>Responsável:</b> Fabrício Silva Epaminondas
+	    </td>
+        </tr>
+        <tr class="destaque">
+            <td class="horario">17:00<br/>18:00</td>
+            <td>-</td>
+            <td>
+                <b>Mini-Curso:</b> Desenvolvendo aplicações GWT com GWTDesigner + Ext-GWT
+                <br/>
+                <b>Responsável:</b> Abmar Barros
+            </td>
+            <td>
+                <b>Palestra:</b>E essa onda 2.0 ?
+                <br/>
+                <b>Responsável:</b>Nigini Abílio Oliveira
+            </td>
+            <td>
+            	<b>Palestra:</b> Protocol Buffers
+                <br/>
+                <b>Responsável:</b> Fabrício Silva Epaminondas
+            </td>
+        </tr>
+	</table>	
+<p><!--a class="botao" style="margin-right:280px" href="{% url lti.jatic.views.inscricao %}">Inscreva-se Já !</a--></p>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

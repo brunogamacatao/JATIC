@@ -1,0 +1,56 @@
+{% extends "jatic/index.html" %}
+{% block head %}
+	{{ form.media }}
+{% endblock %}
+{% block jquery %}
+	$(":submit").button();
+	$("#dialog-modal").dialog({
+		height: 140,
+		width: 450,
+		modal: true
+	});
+{% endblock %}
+{% block titulo %}
+<h1>Inscri&ccedil;&atilde;o para o JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+<div id="dialog-modal" title="Aguarde mais um pouco ...">
+	<p>Por favor aguarde, em instantes voc&ecirc; ser&aacute; redirecionado para a p&aacute;gina de pagamento ...</p>
+</div>
+<form id="form_pagto" method="POST" action="https://pagseguro.uol.com.br/checkout/checkout.jhtml">
+	<input type="hidden" name="ref_transacao"  value="{{ dados.id }}"/>
+	<input type="hidden" name="email_cobranca" value="brunogamacatao@gmail.com"/>
+	<input type="hidden" name="tipo"           value="CP"/>
+	<input type="hidden" name="moeda"          value="BRL"/>
+	<input type="hidden" name="encoding"       value="ISO-8859-1"/>
+
+	<input type="hidden" name="cliente_nome"   value="{{ dados.nome }}"/>
+	<input type="hidden" name="cliente_cep"    value="{{ cep }}"/>
+	<input type="hidden" name="cliente_end"    value="{{ dados.endereco }}"/>
+	<input type="hidden" name="cliente_num"    value="{{ dados.numero }}"/>
+	<input type="hidden" name="cliente_compl"  value="{{ dados.complemento }}"/>
+	<input type="hidden" name="cliente_bairro" value="{{ dados.bairro }}"/>
+	<input type="hidden" name="cliente_cidade" value="{{ dados.cidade }}"/>
+	<input type="hidden" name="cliente_uf"     value="{{ dados.estado }}"/>
+	<input type="hidden" name="cliente_pais"   value="BRA"/>
+	<input type="hidden" name="cliente_ddd"    value="{{ ddd }}"/>
+	<input type="hidden" name="cliente_tel"    value="{{ telefone }}"/>
+	<input type="hidden" name="cliente_email"  value="{{ dados.email }}"/>
+
+	<input type="hidden" name="item_id_1"    value="0"/>
+	<input type="hidden" name="item_descr_1" value="Inscricao para o JATIC 2010"/>
+	<input type="hidden" name="item_quant_1" value="1"/>
+	<input type="hidden" name="item_valor_1" value="3000"/>
+	<input type="hidden" name="item_frete_1" value="0"/>
+	<input type="hidden" name="item_peso_1"  value="0"/>
+	
+	<p align="center">Em instantes voc&ecirc; ser&aacute; redirecionado para a p&aacute;gina de pagamento ...</p>
+	<p align="center">Caso o seu navegador n&atilde;o mude automaticamente de p&aacute;gina, clique no bot&atilde;o abaixo.</p>
+	<p align="center"><input type="submit" value="Realizar Pagamento"/></p>
+</form>
+<script type="text/javascript">
+	document.getElementById('form_pagto').submit();
+</script>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

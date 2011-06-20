@@ -1,0 +1,25 @@
+{% extends "jatic/index.html" %}
+{% block head %}
+	{{ form.media }}
+	<script src="apps{{ MEDIA_URL }}js/jquery.maskedinput-1.2.2.min.js" type="text/javascript"></script>
+{% endblock %}
+{% block jquery %}
+	$("#id_telefone").mask("(99)9999-9999");
+	$("#id_cep").mask("99999-999");
+	$(":submit").button();
+	document.getElementById('id_nome').focus();
+{% endblock %}
+{% block titulo %}
+<h1>Inscri&ccedil;&atilde;o para o JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+<form method="POST" action="">
+	{% csrf_token %}
+	<table id="formulario">
+	{{ form.as_table }}
+	</table>
+	<p align="center"><input type="submit" value="Cadastrar"/></p>
+</form>
+{% endblock %}
+{% block agenda %}
+{% endblock %}

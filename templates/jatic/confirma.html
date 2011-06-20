@@ -1,0 +1,96 @@
+{% extends "jatic/index.html" %}
+{% block head %}
+<style type="text/css">
+	.dataGrid, .dataGrid td, .dataGrid th {
+		font: bold 85% "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		border:2px solid #174378;
+		padding: 2px;
+	}
+	.dataGrid th {
+		background-color: #376398;
+		color:white;
+	}
+</style>
+{{ form.media }}
+<script src="apps{{ MEDIA_URL }}js/jquery.maskedinput-1.2.2.min.js" type="text/javascript"></script>
+{% endblock %}
+{% block jquery %}
+        $("#id_telefone").mask("(99)9999-9999");
+        $("#id_cep").mask("99999-999");
+{% endblock %}
+{% block titulo %}
+<h1>Monte a sua programa&ccedil;&atilde;o para o JATIC 2010</h1>
+{% endblock %}
+{% block conteudo %}
+<h2>Confirme os seus dados</h2>
+<p><i>Atenção, estes dados serão impressos no seu crachá e certificado</i></p>
+<form method="POST" action="">
+        {% csrf_token %}
+        <table id="formulario">
+        {{ form.as_table }}
+        </table>
+        <p align="center"><input type="submit" value="Modificar"/></p>
+</form>
+<hr/>
+<h2>Escolha as atividades de que quer participar:</h2>
+<p><i>Você pode selecionar quantas atividades quiser, contanto que tenha vagas e que os horários não se choquem.</i></p>
+<p><i><b>Atenção:</b> Abaixo são exibidas apenas as atividades que ainda tenham vagas e que não tenham choque de horário com nenhuma outra já selecionada.</i></p>
+<table class="dataGrid">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Palestrante</th>
+			<th>Vagas Restantes</th>
+			<th>Início</th>
+			<th>Fim</th>
+			<th>Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for atracao in atracoes_disponiveis %}
+		<tr>
+			<td>{{ atracao.nome }}</td>
+			<td>{{ atracao.palestrante }}</td>
+			<td>{{ atracao.vagas }}</td>
+			<td>{{ atracao.horaInicio }}</td>
+			<td>{{ atracao.horaFim }}</td>
+			<td><input type="button" value="Inscrever-se" onclick="javascript:window.location='{% url lti.jatic.views.matricula inscricao.id atracao.id %}'"/></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+<br/>
+<h2>Atividades escolhidas:</h2>
+<p><i>As atividades abaixo já estão associadas a você</i></p>
+<table class="dataGrid">
+        <thead>
+                <tr>
+                        <th>Nome</th>
+                        <th>Palestrante</th>
+                        <th>Vagas Restantes</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+			<th>Ação</th>
+                </tr>
+        </thead>
+        <tbody>
+        {% for atracao in atracoes_selecionadas %}
+                <tr>
+                        <td>{{ atracao.nome }}</td>
+                        <td>{{ atracao.palestrante }}</td>
+                        <td>{{ atracao.vagas }}</td>
+                        <td>{{ atracao.horaInicio }}</td>
+                        <td>{{ atracao.horaFim }}</td>
+			<td><input type="button" value="Desistir" onclick="javascript:window.location='{% url lti.jatic.views.desistir inscricao.id atracao.id %}'"/></td>
+                </tr>
+	{% empty %}
+		<tr>
+			<td colspan="6">Nenhuma atividade foi selecionada</td>
+		</tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock %}
+{% block agenda %}
+{% endblock %}
+

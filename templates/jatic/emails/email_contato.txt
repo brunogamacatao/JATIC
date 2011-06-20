@@ -1,0 +1,7 @@
+Alguém preencheu o formulário de contato do JATIC com os dados abaixo:
+
+Nome:     {{ contato.nome }}
+Email:    {{ contato.email }}
+Telefone: {{ contato.telefone }}
+Mensagem:
+{{ contato.mensagem }}
